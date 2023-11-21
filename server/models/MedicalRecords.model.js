@@ -1,12 +1,16 @@
+
+
 import mongoose from 'mongoose';
 
 const MedicalRecordSchema = new mongoose.Schema({
-  patientName: {
-    type: String,
+  patient: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Patient', // Reference to the Patient model
     required: true,
   },
-  doctorName: {
-    type: String,
+  doctor: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Doctor', // Reference to the Doctor model
     required: true,
   },
   date: {
